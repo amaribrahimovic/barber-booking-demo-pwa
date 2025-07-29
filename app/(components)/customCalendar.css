@@ -1,0 +1,116 @@
+:root {
+  --fc-today-bg-color: transparent;
+  --fc-highlight-color: rgba(219, 11, 51, 0.25);
+}
+
+.fc .fc-col-header-cell {
+  text-align: left;
+}
+.fc .fc-col-header-cell .fc-scrollgrid-sync-inner {
+  display: block;
+}
+
+/* .fc-day-today {
+  } */
+
+.fc {
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Remove the background from the grid header */
+.fc .fc-col-header-cell {
+  background-color: #1f1f1f; /* Light gray background */
+  font-size: 14px;
+  font-weight: 500;
+  color: #a0adad;
+  font-weight: lighter;
+  padding: 10px;
+  border-right: 1px solid #0f0f0f;
+}
+
+.fc .fc-timegrid-slot.fc-timegrid-slot-label {
+  color: #a0adad; /* Subtle color for time labels */
+  font-size: 12px;
+}
+
+/* Highlight current day */
+.fc .fc-day-today {
+  /* background-color: #f0f8ff; */ /* Subtle blue background */
+  color: #1f7a1f; /* Red text for today */
+  font-weight: bold;
+}
+
+/* Adjust the calendar body for clean look */
+.fc .fc-timegrid-axis {
+  color: #fff;
+  background-color: #1f1f1f; /* Light gray background for the time axis */
+}
+
+.fc .fc-timegrid-axis-cushion {
+  font-size: 12px;
+  color: #fff; /* Subtle color for time axis text */
+}
+
+/* Using more specific selectors */
+.fc-timegrid-slot {
+  border-right: 1px solid #1f1f1f !important;
+  border-bottom: 1px solid #1f1f1f !important;
+  text-align: center;
+}
+
+th.fc-timegrid-axis {
+  border-right: 1px solid #0f0f0f !important;
+  border-bottom: 1px solid #0f0f0f !important;
+}
+
+.fc-timegrid-slot-lane {
+  background: #3d3d3d;
+  border: 1px solid #1f1f1f !important;
+  padding: 0.5rem 0 !important;
+}
+
+.fc-col-header-cell {
+  border-bottom: 1px solid #1f1f1f !important;
+}
+
+.fc-event-main p {
+  font-size: 12px !important;
+  white-space: nowrap;
+  overflow: hidden; /* Hides the overflow text */
+  text-overflow: ellipsis;
+}
+
+.custom-btn {
+  background-color: #374151;
+  border-radius: 0;
+}
+
+.custom-btn:hover {
+  background-color: #4b5563;
+}
+
+.fc-event-main {
+  background-color: #1f7a1f !important;
+  cursor: pointer;
+}
+
+/* Change the arrow color of the prev/next buttons */
+.fc-prev-button,
+.fc-next-button {
+  background: #1f7a1f !important;
+  border: 1px #1f7a1f !important;
+}
+
+.already-booked {
+  height: 100%;
+  font-size: calc(1rem);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+  margin: 0 !important;
+}
