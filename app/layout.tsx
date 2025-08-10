@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lahi barber",
-  description: "Lahi barber booking app",
+  title: "Barber booking demo PWA",
+  description: "Barber booking demo PWA app",
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],

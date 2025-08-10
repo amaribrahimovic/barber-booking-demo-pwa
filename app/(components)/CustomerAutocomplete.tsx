@@ -3,6 +3,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "";
+
 const CustomerAutocomplete = ({ onSelect }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [customers, setCustomers] = useState([]);
@@ -11,7 +13,7 @@ const CustomerAutocomplete = ({ onSelect }) => {
 
   const fetchCustomers = async () => {
     try {
-      const response = await axios.get(`/api/customers`);
+      const response = await axios.get(`${backendUrl}/customers`);
 
       if (response.status !== 200) {
         throw new Error("Failed to fetch customers");

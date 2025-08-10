@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Lahi Barber",
-    short_name: "Lahi Barber",
-    description: "Lahi barber booking app",
+    name: "Barber booking",
+    short_name: "BBDPWA",
+    description: "Barber booking demo PWA app",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

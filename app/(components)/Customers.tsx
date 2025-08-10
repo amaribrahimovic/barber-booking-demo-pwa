@@ -6,6 +6,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Loader from "@/app/(components)/Loader";
 import Alert from "@/app/(components)/Alert";
 
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -45,7 +47,7 @@ const Customers = () => {
   const fetchCustomers = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/customers");
+      const response = await fetch(`${backendUrl}/customers`);
       if (!response.ok) {
         setAlertText(
           "Napaka pri pridobivanju strank. Prosim, poskusite znova."
@@ -80,7 +82,7 @@ const Customers = () => {
     }
     setLoading(true);
     try {
-      const response = await fetch("/api/customers", {
+      const response = await fetch(`${backendUrl}/customers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +111,7 @@ const Customers = () => {
   const deleteCustomer = async (customerId: string) => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/customers/${customerId}`, {
+      const response = await fetch(`${backendUrl}/customers/${customerId}`, {
         method: "DELETE",
       });
       if (!response.ok) {

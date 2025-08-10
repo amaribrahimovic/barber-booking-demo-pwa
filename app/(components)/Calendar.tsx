@@ -17,9 +17,10 @@ import CustomerAutocomplete from "./CustomerAutocomplete";
 import { Button } from "@mui/joy";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import Alert from "./Alert";
-// import Alert from "./Alert";
 
 dayjs.extend(utc);
+
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "";
 
 const modalStyle = {
   position: "absolute",
@@ -80,9 +81,11 @@ const Calendar = () => {
       const calendarApi = calendarRef.current.getApi();
       const currentDate = calendarApi.getDate();
 
-      const response = await axios.post(`/api/appointments/date`, {
+      const response = await axios.post(`${backendUrl}/appointments/date`, {
         date: currentDate.toISOString(),
       });
+
+      console.log(response.status);
 
       if (response.status === 200) {
         const appointments = response.data;
@@ -116,7 +119,7 @@ const Calendar = () => {
     handleClose();
     setLoading(true);
 
-    const response = await axios.post("/api/appointments", {
+    const response = await axios.post(`${backendUrl}/appointments`, {
       customerId,
       dateFrom: eventStartTime,
     });
@@ -152,7 +155,9 @@ const Calendar = () => {
 
     setLoading(true);
     setSelectedEvent(null);
-    const response = await axios.delete(`/api/appointments/${eventId}`);
+    const response = await axios.delete(
+      `${backendUrl}/appointments/${eventId}`
+    );
     if (response.status === 200) {
       setAppointments(
         appointments.filter((appointment) => appointment._id !== eventId)
