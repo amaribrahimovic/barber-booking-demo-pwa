@@ -1,12 +1,10 @@
 import mongoose, { Schema, models, model, Document } from "mongoose";
 
-// Define TypeScript interface for the schema
 interface ICustomer extends Document {
   fullName: string;
   phoneNumber: string;
 }
 
-// Define schema with interface
 const CustomerSchema = new Schema<ICustomer>(
   {
     fullName: {

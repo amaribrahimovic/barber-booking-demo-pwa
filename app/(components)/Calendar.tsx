@@ -261,7 +261,6 @@ const Calendar = () => {
   }, [alertOpen]);
 
   useEffect(() => {
-    // document.title = "Rojstni dnevi";
     fetchAppointments();
   }, []);
 
